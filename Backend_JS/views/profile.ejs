@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script type="style/css">
+        h1{
+            text-align: center;
+        }
+    </script>
+</head>
+<body>
+    <% if (user) {%>
+    <h1>Login Success</h1>
+    <title>Profile : <%= user.name %></title>
+</head>
+<body>
+    <h1>Welcome <%= user.name %></h1>
+    <p>
+        <strong>token</strong> : <%= user.access_token %><br>
+        <strong>id</strong>    : <%= user.uid %><br>
+        <strong>name</strong>  : <%= user.name %><br>
+        <strong>email</strong> : <%= user.email %><br>
+        <img src="<%= user.photo%>" width="200" height="200" alt="">
+    </p> 
+    <% } %>
+
+    <a href="/logout"><button type="submit" style="background-color: blue;"><b>Logout</b></button></a>
+</body>
+</html>
